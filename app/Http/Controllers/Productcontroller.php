@@ -10,11 +10,8 @@ use Illuminate\Support\Facades\Validator;
 class Productcontroller extends Controller
 {
     public function Create_Product(){
-        return view('Product.product');
+        return view('Product.InsertProduct');
     }
-
-
-
 
     public function Insert_Product(Request $request)
     {
@@ -34,6 +31,7 @@ class Productcontroller extends Controller
             return 'saved successfully';
         }
     }
+
     public function All_Product(){
         $products=  Product::select ('id','name','Description')->get();
         return view('Product.AllProducts',compact('products'));
@@ -46,28 +44,18 @@ class Productcontroller extends Controller
             return redirect()->back();
         $product=Product::select('id','name','Description')->find($id);
         return view('Product.EditProduct',compact('product'));
-
     }
 
     public function Update_Product(Request $request ,$id){
         $product=Product::find($id);
         if (!$product)
             return redirect()->back();
-
         $product->update($request->all());
-        return redirect()-> back()->with('success');
-
+        return  'saved successfully';
+;
     }
 
-
-
-
-
-
-
-
-
-    public function deleteProduct($id){
+    public function delete_Product($id){
             DB::table('products')->where('id',$id)->delete();
             echo "Record deleted successfully.";
         }

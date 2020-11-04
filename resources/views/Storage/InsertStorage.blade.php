@@ -64,17 +64,26 @@
         </style>
     </head>
     <body>
-    <form method="post" action="{{route('product.insertProduct')}}">
+    <form method="post" action="{{route('storage.insertstorage')}}">
         @csrf
         <div class="form-group">
-            <label for="exampleInputName">Prouduct Name</label>
-            <input type="text" class="form-control" name="name" aria-describedby="nameHelp">
+            <label for="exampleInputName">product_id</label>
+            <input type="number" class="form-control" name="product_id" aria-describedby="nameHelp">
+ {{--        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
+        </div>    <div class="form-group">
+            <label for="exampleInputName">QtyOnHand</label>
+            <input type="number" class="form-control" name="QtyOnHand" aria-describedby="nameHelp">
+ {{--        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
         </div>
         <div class="form-group">
-            <label for="exampleInputDescription">Prouduct Description</label>
-            <input type="text" class="form-control" name="Description">
+            <label for="exampleInputDescription">Createdby</label>
+            <input type="number" class="form-control" name="Createdby">
         </div>
-        <button type="submit" class="btn btn-primary">Add Product</button>
+    {{--    <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>--}}
+        <button type="submit" class="btn btn-primary">Add Storage</button>
     </form>
     </body>
 </html>

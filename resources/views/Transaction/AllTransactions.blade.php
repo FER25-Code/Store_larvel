@@ -64,17 +64,32 @@
         </style>
     </head>
     <body>
-    <form method="post" action="{{route('product.insertProduct')}}">
-        @csrf
-        <div class="form-group">
-            <label for="exampleInputName">Prouduct Name</label>
-            <input type="text" class="form-control" name="name" aria-describedby="nameHelp">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputDescription">Prouduct Description</label>
-            <input type="text" class="form-control" name="Description">
-        </div>
-        <button type="submit" class="btn btn-primary">Add Product</button>
-    </form>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">product_id</th>
+            <th scope="col">storage_id</th>
+            <th scope="col">typeTransaction</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Created</th>
+            <th scope="col">Createdby</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($transactions as $transaction)
+        <tr>
+            <th scope="row">{{$transaction -> id }}</th>
+            <td>{{$transaction -> product_id }}</td>
+            <td>{{$transaction -> storage_id }}</td>
+            <td>{{$transaction -> typeTransaction }}</td>
+            <td>{{$transaction -> Qty }}</td>
+            <td>{{$transaction -> Created }}</td>
+            <td>{{$transaction -> Createdby }}</td>
+        </tr>
+        @endforeach
+
+        </tbody>
+    </table>
     </body>
 </html>

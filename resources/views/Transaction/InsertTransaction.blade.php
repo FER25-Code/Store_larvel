@@ -64,17 +64,29 @@
         </style>
     </head>
     <body>
-    <form method="post" action="{{route('product.insertProduct')}}">
+    <form method="post" action="{{route('transaction.inserttransaction')}}">
         @csrf
         <div class="form-group">
-            <label for="exampleInputName">Prouduct Name</label>
-            <input type="text" class="form-control" name="name" aria-describedby="nameHelp">
+            <label for="exampleInputName">product_id</label>
+            <input type="number" class="form-control" name="product_id" aria-describedby="nameHelp">
         </div>
         <div class="form-group">
-            <label for="exampleInputDescription">Prouduct Description</label>
-            <input type="text" class="form-control" name="Description">
+            <label for="exampleInputName">storage_id</label>
+            <input type="number" class="form-control" name="storage_id" aria-describedby="nameHelp">
         </div>
-        <button type="submit" class="btn btn-primary">Add Product</button>
+        <div class="form-group">
+            <label for="exampleInputDescription">typeTransaction</label>
+            <input type="text" class="form-control" name="typeTransaction">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputName">Qty</label>
+            <input type="number" class="form-control" name="Qty" aria-describedby="nameHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputName">Createdby</label>
+            <input type="number" class="form-control" name="Createdby" aria-describedby="nameHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Transaction</button>
     </form>
     </body>
 </html>

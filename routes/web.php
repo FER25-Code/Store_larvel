@@ -55,5 +55,18 @@ Route::group(['prefix' => 'transaction'],function (){
 
 });
 
+//Productinstance
 
+Route::group(['prefix' => 'productinstance'],function (){
+    Route::get('/createproductinstance','Productinstancecontroller@Create_Productinstance');
+    Route::post('/inserttransaction','Productinstancecontroller@Insert_Productinstance')->name('productinstance.insertproductinstance');
+    Route::get('/allproductinstance','Productinstancecontroller@All_Productinstance');
+    Route::get('/editproductinstance/{productinstance_id}','Productinstancecontroller@Edit_Productinstance');
+    Route::post('/updateproductinstance/{productinstance_id}','Productinstancecontroller@Update_Productinstance')->name('productinstance.updateproductinstance');
+    Route::get('deleteproductinstance/{id}','Productinstancecontroller@delete_Productinstance');
 
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

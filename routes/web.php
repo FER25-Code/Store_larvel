@@ -94,6 +94,17 @@ Route::group(['prefix' =>'picelistversion'],function (){
 
 });
 
+//Productprice
+Route::group(['prefix' =>'productprice'],function (){
+    Route::get('/createproductprice','ProductPriceController@Create_ProductPrice');
+    Route::post('/insertproductprice','ProductPriceController@Insert_ProductPrice')->name('productprice.insertproductprice');
+    Route::get('/allproductprice','ProductPriceController@All_ProductPrice');
+    Route::get('/editproductprice/{picelistversion_id}','ProductPriceController@Edit_ProductPrice');
+    Route::post('/updateproductprice/{picelistversion_id}','ProductPriceController@Update_ProductPrice')->name('productprice.updateproductprice');
+    Route::get('deleteproductprice/{picelistversion_id}','ProductPriceController@delete_ProductPrice');
+
+});
+
 
 
 //User

@@ -83,6 +83,17 @@ Route::group(['prefix' =>'picelist'],function (){
 
 });
 
+//PiceListVersion
+Route::group(['prefix' =>'picelistversion'],function (){
+    Route::get('/createpicelistversion','PiceListversionController@Create_PiceListversion');
+    Route::post('/insertpicelistversion','PiceListversionController@Insert_PiceListversion')->name('picelistversion.insertpicelistversion');
+    Route::get('/allpicelistversion','PiceListversionController@All_PiceListversion');
+    Route::get('/editpicelistversion/{picelistversion_id}','PiceListversionController@Edit_PiceListversion');
+    Route::post('/updatepicelistversion/{picelistversion_id}','PiceListversionController@Update_PiceListversion')->name('picelistversion.updatepicelistversion');
+    Route::get('deletepicelistversion/{picelistversion_id}','PiceListversionController@delete_PiceListversion');
+
+});
+
 
 
 //User

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ControllerPiceList extends Controller
 {
-    //['user_id','name','year','updated','updatedby']
 
     public function Create_PiceList(){
         return view('PiceList.InsertPiceList');

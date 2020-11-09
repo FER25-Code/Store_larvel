@@ -51,6 +51,7 @@ class Productinstancecontroller extends Controller
         $productinstance=Productinstance::select ('id','product_id','name','code','pin','Created','Createdby')->find($id);
         return view('Productinstance.EditProductinstance',compact('productinstance'));
     }
+
     public function Update_Productinstance(Request $request ,$id){
         $productinstance=Productinstance::find($id);
         if (!$productinstance)

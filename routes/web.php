@@ -63,7 +63,19 @@ Route::group(['prefix' => 'productinstance'],function (){
     Route::get('/allproductinstance','Productinstancecontroller@All_Productinstance');
     Route::get('/editproductinstance/{productinstance_id}','Productinstancecontroller@Edit_Productinstance');
     Route::post('/updateproductinstance/{productinstance_id}','Productinstancecontroller@Update_Productinstance')->name('productinstance.updateproductinstance');
-    Route::get('deleteproductinstance/{id}','Productinstancecontroller@delete_Productinstance');
+    Route::get('deleteproductinstance/{productinstance_id}','Productinstancecontroller@delete_Productinstance');
+
+});
+
+//UserGroup
+
+Route::group(['prefix' => 'usergroup'],function (){
+    Route::get('/createusergroup','UserGroupController@Create_UserGroup');
+    Route::post('/insertusergroup','UserGroupController@Insert_UserGroup')->name('usergroup.insertproductinstance');
+    Route::get('/allusergroups','UserGroupController@All_UserGroup');
+    Route::get('/editusergroup/{usergroup_id}','UserGroupController@Edit_UserGroup');
+    Route::post('/updateusergroup/{usergroup_id}','UserGroupController@Update_UserGroup')->name('usergroup.updateusergroup');
+    Route::get('deleteusergroup/{usergroup_id}','UserGroupController@delete_UserGroup');
 
 });
 

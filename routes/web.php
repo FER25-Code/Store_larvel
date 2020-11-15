@@ -125,6 +125,16 @@ Route::group(['prefix' =>'orderline'],function (){
     Route::get('deleteorderline/{orderline_id}','OrderLineController@delete_OrderLine');
 });
 
+//OrderLineProduct
+Route::group(['prefix' =>'orderlineproduct'],function (){
+    Route::get('/createorderlineproduct','OrderLineProductController@Create_OrderLineProduct');
+    Route::post('/insertorderlineproduct','OrderLineProductController@Insert_OrderLineProduct')->name('orderlineproduct.insertorderlineproduct');
+    Route::get('/allorderlineproduct','OrderLineProductController@All_OrderLineProduct');
+    Route::get('/editorderlineproduct/{orderlineproduct_id}','OrderLineProductController@Edit_OrderLineProduct');
+    Route::post('/updateorderlineproduct/{orderlineproduct_id}','OrderLineProductController@Update_OrderLineProduct')->name('orderlineproduct.updateorderlineproduct');
+    Route::get('deleteorderlineproduct/{orderlineproduct_id}','OrderLineProductController@delete_OrderLineProduct');
+});
+
 
 
 //User

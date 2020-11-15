@@ -105,6 +105,26 @@ Route::group(['prefix' =>'productprice'],function (){
 
 });
 
+//Order
+Route::group(['prefix' =>'order'],function (){
+    Route::get('/createorder','OrderController@Create_Order');
+    Route::post('/insertorder','OrderController@Insert_Order')->name('order.insertorder');
+    Route::get('/allorder','OrderController@All_Order');
+    Route::get('/editorder/{order_id}','OrderController@Edit_Order');
+    Route::post('/updateorder/{order_id}','OrderController@Update_Order')->name('order.updateorder');
+    Route::get('deleteorder/{order_id}','OrderController@delete_Order');
+});
+
+//OrderLine
+Route::group(['prefix' =>'orderline'],function (){
+    Route::get('/createorderline','OrderLineController@Create_OrderLine');
+    Route::post('/insertorderline','OrderLineController@Insert_OrderLine')->name('orderline.insertorderline');
+    Route::get('/allorderline','OrderLineController@All_OrderLine');
+    Route::get('/editorderline/{orderline_id}','OrderLineController@Edit_OrderLine');
+    Route::post('/updateorderline/{orderline_id}','OrderLineController@Update_OrderLine')->name('orderline.updateorderline');
+    Route::get('deleteorderline/{orderline_id}','OrderLineController@delete_OrderLine');
+});
+
 
 
 //User

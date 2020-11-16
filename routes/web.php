@@ -135,6 +135,26 @@ Route::group(['prefix' =>'orderlineproduct'],function (){
     Route::get('deleteorderlineproduct/{orderlineproduct_id}','OrderLineProductController@delete_OrderLineProduct');
 });
 
+//Wallet
+Route::group(['prefix' =>'wallet'],function (){
+    Route::get('/createwallet','WalletController@Create_Wallet');
+    Route::post('/insertwallet','WalletController@Insert_Wallet')->name('wallet.insertwallet');
+    Route::get('/allwallet','WalletController@All_Wallet');
+    Route::get('/editwallet/{wallet_id}','WalletController@Edit_Wallet');
+    Route::post('/updatewallet/{wallet_id}','WalletController@Update_Wallet')->name('wallet.updatewallet');
+    Route::get('deletewallet/{wallet_id}','WalletController@delete_Wallet');
+});
+
+//WalletTransaction
+Route::group(['prefix' =>'wallettransaction'],function (){
+    Route::get('/createwallettransaction','WalletTransactionController@Create_WalletTransaction');
+    Route::post('/insertwallettransaction','WalletTransactionController@Insert_WalletTransaction')->name('wallettransaction.insertwallettransaction');
+    Route::get('/allwallettransaction','WalletTransactionController@All_WalletTransaction');
+    Route::get('/editwallettransaction/{wallettransaction_id}','WalletTransactionController@Edit_WalletTransaction');
+    Route::post('/updatewallettransaction/{wallettransaction_id}','WalletTransactionController@Update_WalletTransaction')->name('wallettransaction.updatewallettransaction');
+    Route::get('deletewallettransaction/{wallettransaction_id}','WalletTransactionController@delete_WalletTransaction');
+});
+
 
 
 //User

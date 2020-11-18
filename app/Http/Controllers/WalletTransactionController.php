@@ -62,4 +62,5 @@ class WalletTransactionController extends Controller
         DB::table('wallettransactions')->where('id',$id)->delete();
         echo "Record deleted successfully.";
     }
+
 }

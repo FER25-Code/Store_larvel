@@ -155,6 +155,16 @@ Route::group(['prefix' =>'wallettransaction'],function (){
     Route::get('deletewallettransaction/{wallettransaction_id}','WalletTransactionController@delete_WalletTransaction');
 });
 
+//OrderPayment
+Route::group(['prefix' =>'orderpayment'],function (){
+    Route::get('/createorderpayment','OrderPaymentController@Create_OrderPayment');
+    Route::post('/insertorderpayment','OrderPaymentController@Insert_OrderPayment')->name('orderpayment.insertorderpayment');
+    Route::get('/allorderpayment','OrderPaymentController@All_OrderPayment');
+    Route::get('/editorderpayment/{orderpayment_id}','OrderPaymentController@Edit_OrderPayment');
+    Route::post('/updateorderpayment/{orderpayment_id}','OrderPaymentController@Update_OrderPayment')->name('orderpayment.updateorderpayment');
+    Route::get('deleteorderpayment/{orderpayment_id}','OrderPaymentController@delete_OrderPayment');
+});
+
 
 
 //User

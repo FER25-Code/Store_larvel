@@ -234,13 +234,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#{{--{{ route('#')}}--}}"class="nav-link">
+                                <a href="{{ route('order.createorder')}}"class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p> ADD ORDER</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#{{--{{ route('')}}--}}" class="nav-link">
+                                <a href="{{ route('order.allorder')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>ALL ORDERS </p>
                                 </a>
@@ -279,66 +279,31 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tree"></i>
                             <p>
-                                UI Elements
+                                WALLET
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/UI/general.html" class="nav-link">
+                                <a href="{{ route('wallet.createwallet')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>General</p>
+                                    <p> ADD WALLET</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/UI/icons.html" class="nav-link">
+                                <a href="{{ route('wallet.allwallet')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Icons</p>
+                                    <p>ALL WALLET</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/buttons.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Buttons</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/sliders.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sliders</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/modals.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Modals & Alerts</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/navbar.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Navbar & Tabs</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/timeline.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Timeline</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/ribbons.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Ribbons</p>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>
-                                Forms
+                                STORAGE
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -346,25 +311,13 @@
                             <li class="nav-item">
                                 <a href="pages/forms/general.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>General Elements</p>
+                                    <p>ADD STORAGE</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="pages/forms/advanced.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Advanced Elements</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/forms/editors.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Editors</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Validation</p>
+                                    <p>ALL STORAGE</p>
                                 </a>
                             </li>
                         </ul>
@@ -373,7 +326,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
-                                Tables
+                                TRANSACTION
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -381,19 +334,13 @@
                             <li class="nav-item">
                                 <a href="pages/tables/simple.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Simple Tables</p>
+                                    <p>ADD TRANSACTION</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="pages/tables/data.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>DataTables</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/tables/jsgrid.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>jsGrid</p>
+                                    <p>ALL TRANSACTION</p>
                                 </a>
                             </li>
                         </ul>
@@ -676,78 +623,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-header">MISCELLANEOUS</li>
-                    <li class="nav-item">
-                        <a href="https://adminlte.io/docs/3.0/" class="nav-link">
-                            <i class="nav-icon fas fa-file"></i>
-                            <p>Documentation</p>
-                        </a>
-                    </li>
-                    <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-circle nav-icon"></i>
-                            <p>Level 1</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-circle"></i>
-                            <p>
-                                Level 1
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Level 2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>
-                                        Level 2
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Level 3</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Level 3</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Level 3</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Level 2</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-circle nav-icon"></i>
-                            <p>Level 1</p>
-                        </a>
-                    </li>
+
                     <li class="nav-header">LABELS</li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"

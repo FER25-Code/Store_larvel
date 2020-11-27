@@ -74,12 +74,12 @@ Route::group(['prefix' =>'picelistversion'],function (){
 
 //Order
 Route::group(['prefix' =>'order'],function (){
-    Route::get('/createorder','OrderController@Create_Order');
+    Route::get('/createorder','OrderController@Create_Order')->name('order.createorder');
     Route::post('/insertorder','OrderController@Insert_Order')->name('order.insertorder');
-    Route::get('/allorder','OrderController@All_Order');
-    Route::get('/editorder/{order_id}','OrderController@Edit_Order');
-    Route::post('/updateorder/{order_id}','OrderController@Update_Order')->name('order.updateorder');
-    Route::get('deleteorder/{order_id}','OrderController@delete_Order');
+    Route::get('/allorder','OrderController@All_Order')->name('order.allorder');
+    Route::get('/editorder/{id}','OrderController@Edit_Order')->name('order.editorder');
+    Route::post('/updateorder/{id}','OrderController@Update_Order')->name('order.updateorder');
+    Route::get('deleteorder/{id}','OrderController@delete_Order')->name('order.deleteorder');
 });
 
 //OrderLine
@@ -115,12 +115,12 @@ Route::group(['prefix' =>'orderpayment'],function (){
 
 //Wallet
 Route::group(['prefix' =>'wallet'],function (){
-    Route::get('/createwallet','WalletController@Create_Wallet');
+    Route::get('/createwallet','WalletController@Create_Wallet')->name('wallet.createwallet');
     Route::post('/insertwallet','WalletController@Insert_Wallet')->name('wallet.insertwallet');
-    Route::get('/allwallet','WalletController@All_Wallet');
-    Route::get('/editwallet/{wallet_id}','WalletController@Edit_Wallet');
-    Route::post('/updatewallet/{wallet_id}','WalletController@Update_Wallet')->name('wallet.updatewallet');
-    Route::get('deletewallet/{wallet_id}','WalletController@delete_Wallet');
+    Route::get('/allwallet','WalletController@All_Wallet')->name('wallet.allwallet');
+    Route::get('/editwallet/{id}','WalletController@Edit_Wallet')->name('wallet.editwallet');
+    Route::post('/updatewallet/{id}','WalletController@Update_Wallet')->name('wallet.updatewallet');
+    Route::get('deletewallet/{id}','WalletController@delete_Wallet')->name('wallet.deletewallet');
 });
 
 //WalletTransaction

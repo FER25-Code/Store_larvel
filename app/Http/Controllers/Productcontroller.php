@@ -57,7 +57,7 @@ class Productcontroller extends Controller
 
     public function delete_Product($id){
             DB::table('products')->where('id',$id)->delete();
-            echo "Record deleted successfully.";
+            echo "Record del eted successfully.";
         }
 
 }

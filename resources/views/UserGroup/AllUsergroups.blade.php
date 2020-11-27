@@ -1,93 +1,71 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.admin')
+@section('content')
 
-        <title>Laravel</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">USERS GROUPS  Table</h3>
+                    <div class="card-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">user_id</th>
-            <th scope="col">name</th>
-            <th scope="col">pourcentage</th>
-            <th scope="col">updated</th>
-            <th scope="col">updatedby</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($usergroups as $usergroup)
-        <tr>
-            <th scope="row">{{$usergroup->id}}</th>
-            <td>{{$usergroup ->user_id}}</td>
-            <td>{{$usergroup ->name}}</td>
-            <td>{{$usergroup ->pourcentage}}</td>
-            <td>{{$usergroup ->updated}}</td>
-            <td>{{$usergroup ->updatedby}}</td>
-        </tr>
-        @endforeach
-
-        </tbody>
-    </table>
-    </body>
-</html>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover text-nowrap">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>user_id</th>
+                            <th>name</th>
+                            <th>pourcentage</th>
+                            <th>updated</th>
+                            <th>updatedby</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($usergroups as $usergroup)
+                            <tr>
+                                <th scope="row">{{$usergroup->id}}</th>
+                                <td>{{$usergroup ->user_id}}</td>
+                                <td>{{$usergroup ->name}}</td>
+                                <td>{{$usergroup ->pourcentage}}</td>
+                                <td>{{$usergroup ->updated}}</td>
+                                <td>{{$usergroup ->updatedby}}</td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Add
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.row -->
+@endsection

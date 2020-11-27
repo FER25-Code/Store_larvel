@@ -6,7 +6,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Products Table</h3>
+                <h3 class="card-title">Users Table</h3>
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -26,28 +26,31 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Description</th>
+                        <th>Email</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
                     </tr>
                     </thead>
                     <tbody>
-
-                        @foreach($products as $product)
+                    @foreach($users as $user)
                         <tr>
-                            <th scope="row">{{$product-> id }}</th>
-                            <td>{{$product -> name }}</td>
-                            <td>{{$product -> Description }}</td>
+                            <th scope="row">{{$user -> id }}</th>
+                            <td>{{$user -> name }}</td>
+                            <td>{{$user ->email }}</td>
+                            <td>{{$user -> created_at }}</td>
+                            <td>{{$user -> updated_at }}</td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="{{route('productprice.findproductprice',['id'=>$product->id])}}">
+                                <a class="btn btn-primary btn-sm" href="#">
                                     <i class="fas fa-folder">
                                     </i>
                                     View
                                 </a>
-                                <a class="btn btn-info btn-sm" href="{{route('product.editproduct',['id'=>$product->id])}}">
+                                <a class="btn btn-info btn-sm" href="#">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="{{route('product.deleteproduct',['id'=>$product->id])}}">
+                                <a class="btn btn-danger btn-sm" href="#">
                                     <i class="fas fa-trash">
                                     </i>
                                     Delete

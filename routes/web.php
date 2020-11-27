@@ -21,37 +21,24 @@ Route::get('/', function () {
 
 //PRODUCT
 Route::group(['prefix' => 'product'],function (){
-    Route::get('/createproduct','Productcontroller@Create_Product');
+    Route::get('/createproduct','Productcontroller@Create_Product')->name('product.createproduct');
     Route::post('/insertproduct','Productcontroller@Insert_Product')->name('product.insertProduct');
-    Route::get('/allproducts','Productcontroller@All_Product');
-    Route::get('/editproduct/{product_id}','Productcontroller@Edit_Product');
-    Route::post('/updateproduct/{product_id}','Productcontroller@Update_Product')->name('pro.updateProduct');
-    Route::get('/deleteproduct/{id}','Productcontroller@delete_Product');
+    Route::get('/allproducts','Productcontroller@All_Product')->name('product.allproducts');
+    Route::get('/editproduct/{id}','Productcontroller@Edit_Product')->name('product.editproduct');
+    Route::post('/updateproduct/{id}','Productcontroller@Update_Product')->name('product.updateProduct');
+    Route::get('/deleteproduct/{id}','Productcontroller@delete_Product')->name('product.deleteproduct');
 });
 
-//STORAGE
-Route::group(['prefix' => 'storage'],function (){
-    Route::get('/createstorage','Storagecontroller@Create_Storage');
-    Route::post('/insertstorage','Storagecontroller@Insert_Storage')->name('storage.insertstorage');
-    Route::get('/allstorage','Storagecontroller@All_Storage');
-    Route::get('/editstorage/{storage_id}','Storagecontroller@Edit_Storage');
-    Route::post('/updatestorage/{storage_id}','Storagecontroller@Update_Storage')->name('storage.updatestorage');
-    Route::get('/deletestorage/{id}','Storagecontroller@delete_Storage');
-
+//Productprice
+Route::group(['prefix' =>'productprice'],function (){
+    Route::get('/createproductprice','ProductPriceController@Create_ProductPrice');
+    Route::post('/insertproductprice','ProductPriceController@Insert_ProductPrice')->name('productprice.insertproductprice');
+    Route::get('/allproductprice','ProductPriceController@All_ProductPrice')->name('productprice.allproductprice');
+    Route::get('/editproductprice/{id}','ProductPriceController@Edit_ProductPrice');
+    Route::get('/findproductprice/{id}','ProductPriceController@Find_ProductPrice')->name('productprice.findproductprice');
+    Route::post('/updateproductprice/{id}','ProductPriceController@Update_ProductPrice')->name('productprice.updateproductprice');
+    Route::get('deleteproductprice/{id}','ProductPriceController@delete_ProductPrice');
 });
-
-
-//TRANSACTION
-Route::group(['prefix' => 'transaction'],function (){
-    Route::get('/createtransaction','Transactioncontroller@Create_Transaction');
-    Route::post('/inserttransaction','Transactioncontroller@Insert_Transaction')->name('transaction.inserttransaction');
-    Route::get('/allstorage','Transactioncontroller@All_Storage');
-    Route::get('/edittransaction/{transaction_id}','Transactioncontroller@Edit_Transaction');
-    Route::post('/updatetransaction/{transaction_id}','Transactioncontroller@Update_Transaction')->name('transaction.updatetransaction');
-    Route::get('deletetransaction/{id}','Transactioncontroller@delete_Transaction');
-
-});
-
 //Productinstance
 Route::group(['prefix' => 'productinstance'],function (){
     Route::get('/createproductinstance','Productinstancecontroller@Create_Productinstance');
@@ -62,25 +49,14 @@ Route::group(['prefix' => 'productinstance'],function (){
     Route::get('deleteproductinstance/{productinstance_id}','Productinstancecontroller@delete_Productinstance');
 });
 
-//UserGroup
-Route::group(['prefix' => 'usergroup'],function (){
-    Route::get('/createusergroup','UserGroupController@Create_UserGroup');
-    Route::post('/insertusergroup','UserGroupController@Insert_UserGroup')->name('usergroup.insertproductinstance');
-    Route::get('/allusergroups','UserGroupController@All_UserGroup');
-    Route::get('/editusergroup/{usergroup_id}','UserGroupController@Edit_UserGroup');
-    Route::post('/updateusergroup/{usergroup_id}','UserGroupController@Update_UserGroup')->name('usergroup.updateusergroup');
-    Route::get('deleteusergroup/{usergroup_id}','UserGroupController@delete_UserGroup');
-
-});
-
 //PiceList
 Route::group(['prefix' =>'picelist'],function (){
     Route::get('/createpicelist','ControllerPiceList@Create_PiceList');
     Route::post('/insertpicelist','ControllerPiceList@Insert_PiceList')->name('picelist.insertpicelist');
-    Route::get('/allpicelist','ControllerPiceList@All_PiceList');
-    Route::get('/editpicelist/{picelist_id}','ControllerPiceList@Edit_PiceList');
+    Route::get('/allpicelist','ControllerPiceList@All_PiceList')->name('picelist.allpicelist');
+    Route::get('/editpicelist/{id}','ControllerPiceList@Edit_PiceList');
     Route::post('/updatepicelist/{picelist_id}','ControllerPiceList@Update_PiceList')->name('picelist.updatepicelist');
-    Route::get('deletepicelist/{picelist_id}','ControllerPiceList@delete_PiceList');
+    Route::get('deletepicelist/{id}','ControllerPiceList@delete_PiceList')->name('picelist.deletepicelist');
 
 });
 
@@ -95,16 +71,6 @@ Route::group(['prefix' =>'picelistversion'],function (){
 
 });
 
-//Productprice
-Route::group(['prefix' =>'productprice'],function (){
-    Route::get('/createproductprice','ProductPriceController@Create_ProductPrice');
-    Route::post('/insertproductprice','ProductPriceController@Insert_ProductPrice')->name('productprice.insertproductprice');
-    Route::get('/allproductprice','ProductPriceController@All_ProductPrice');
-    Route::get('/editproductprice/{picelistversion_id}','ProductPriceController@Edit_ProductPrice');
-    Route::post('/updateproductprice/{picelistversion_id}','ProductPriceController@Update_ProductPrice')->name('productprice.updateproductprice');
-    Route::get('deleteproductprice/{picelistversion_id}','ProductPriceController@delete_ProductPrice');
-
-});
 
 //Order
 Route::group(['prefix' =>'order'],function (){
@@ -136,6 +102,17 @@ Route::group(['prefix' =>'orderlineproduct'],function (){
     Route::get('deleteorderlineproduct/{orderlineproduct_id}','OrderLineProductController@delete_OrderLineProduct');
 });
 
+//OrderPayment
+Route::group(['prefix' =>'orderpayment'],function (){
+    Route::get('/createorderpayment','OrderPaymentController@Create_OrderPayment');
+    Route::post('/insertorderpayment','OrderPaymentController@Insert_OrderPayment')->name('orderpayment.insertorderpayment');
+    Route::get('/allorderpayment','OrderPaymentController@All_OrderPayment');
+    Route::get('/editorderpayment/{orderpayment_id}','OrderPaymentController@Edit_OrderPayment');
+    Route::post('/updateorderpayment/{orderpayment_id}','OrderPaymentController@Update_OrderPayment')->name('orderpayment.updateorderpayment');
+    Route::get('deleteorderpayment/{orderpayment_id}','OrderPaymentController@delete_OrderPayment');
+});
+
+
 //Wallet
 Route::group(['prefix' =>'wallet'],function (){
     Route::get('/createwallet','WalletController@Create_Wallet');
@@ -156,19 +133,44 @@ Route::group(['prefix' =>'wallettransaction'],function (){
     Route::get('deletewallettransaction/{wallettransaction_id}','WalletTransactionController@delete_WalletTransaction');
 });
 
-//OrderPayment
-Route::group(['prefix' =>'orderpayment'],function (){
-    Route::get('/createorderpayment','OrderPaymentController@Create_OrderPayment');
-    Route::post('/insertorderpayment','OrderPaymentController@Insert_OrderPayment')->name('orderpayment.insertorderpayment');
-    Route::get('/allorderpayment','OrderPaymentController@All_OrderPayment');
-    Route::get('/editorderpayment/{orderpayment_id}','OrderPaymentController@Edit_OrderPayment');
-    Route::post('/updateorderpayment/{orderpayment_id}','OrderPaymentController@Update_OrderPayment')->name('orderpayment.updateorderpayment');
-    Route::get('deleteorderpayment/{orderpayment_id}','OrderPaymentController@delete_OrderPayment');
+//STORAGE
+Route::group(['prefix' => 'storage'],function (){
+    Route::get('/createstorage','Storagecontroller@Create_Storage');
+    Route::post('/insertstorage','Storagecontroller@Insert_Storage')->name('storage.insertstorage');
+    Route::get('/allstorage','Storagecontroller@All_Storage');
+    Route::get('/editstorage/{storage_id}','Storagecontroller@Edit_Storage');
+    Route::post('/updatestorage/{storage_id}','Storagecontroller@Update_Storage')->name('storage.updatestorage');
+    Route::get('/deletestorage/{id}','Storagecontroller@delete_Storage');
+
 });
 
+//TRANSACTION
+Route::group(['prefix' => 'transaction'],function (){
+    Route::get('/createtransaction','Transactioncontroller@Create_Transaction');
+    Route::post('/inserttransaction','Transactioncontroller@Insert_Transaction')->name('transaction.inserttransaction');
+    Route::get('/allstorage','Transactioncontroller@All_Storage');
+    Route::get('/edittransaction/{transaction_id}','Transactioncontroller@Edit_Transaction');
+    Route::post('/updatetransaction/{transaction_id}','Transactioncontroller@Update_Transaction')->name('transaction.updatetransaction');
+    Route::get('deletetransaction/{id}','Transactioncontroller@delete_Transaction');
 
+});
 
 //User
 Auth::routes();
+Route::group(['prefix' =>'user'],function (){
+    Route::get('/alluser','UserController@All_User')->name('user.alluser');
+    Route::get('deleteuser/{user_id}','UserController@delete_User')->name('user.deleteuser');
+});
+
+//UserGroup
+Route::group(['prefix' => 'usergroup'],function (){
+    Route::get('/createusergroup','UserGroupController@Create_UserGroup');
+    Route::post('/insertusergroup','UserGroupController@Insert_UserGroup')->name('usergroup.insertproductinstance');
+    Route::get('/allusergroups','UserGroupController@All_UserGroup')->name('usergroup.allusergroups');
+    Route::get('/editusergroup/{usergroup_id}','UserGroupController@Edit_UserGroup');
+    Route::post('/updateusergroup/{usergroup_id}','UserGroupController@Update_UserGroup')->name('usergroup.updateusergroup');
+    Route::get('deleteusergroup/{usergroup_id}','UserGroupController@delete_UserGroup');
+
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

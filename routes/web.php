@@ -160,6 +160,17 @@ Auth::routes();
 Route::group(['prefix' =>'user'],function (){
     Route::get('/alluser','UserController@All_User')->name('user.alluser');
     Route::get('deleteuser/{user_id}','UserController@delete_User')->name('user.deleteuser');
+
+
+});
+
+//session
+Route::group(['prefix' =>'session'],function (){
+
+    Route::get('get','SessionController@accessSessionData');
+  //  Route::get('set','SessionController@storeSessionData');
+  //  Route::get('delete','SessionController@deleteSessionData');
+
 });
 
 //UserGroup
@@ -174,3 +185,4 @@ Route::group(['prefix' => 'usergroup'],function (){
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/insertusers', [App\Http\Controllers\UserController::class, 'index'])->name('insertusers');

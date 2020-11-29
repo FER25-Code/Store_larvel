@@ -28,9 +28,11 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
-
-                            <p>New Orders</p>
+                            <p> BALANCE</p>
+                            <div class="form-group">
+                                <label for="exampleInputName">balance</label>
+                                <input type="number" class="form-control" name="balance" value="{{$wallets}}" aria-describedby="nameHelp">
+                            </div>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-    <form method="post" action="{{route('order.insertorder')}}">
+    <form method="post" action="{{route('wallet.insertwallet')}}">
         @csrf
         <div class="card card-primary">
             <div class="card-header">

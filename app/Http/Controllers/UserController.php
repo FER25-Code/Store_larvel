@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Wallet;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -22,9 +24,26 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function Insert_User()
     {
         return view('User.InsertUsers');
     }
+
+    public function Find_UserBalance(Request $request){
+     $data= $request->user();
+        echo 'id:';  echo  $user_id=$data->id ;
+        $wallet=Wallet::select('id','user_id','balance','due','updated','updatedby')->where('user_id',$user_id)->get();
+        $someObject = json_decode($wallet);
+        echo $wallets=$someObject[0]->balance;
+        return view('home',compact('wallets'));
+    }
+
+    public function Find_WalletBalance($product_id){
+
+
+        $balance=ProductPrice::where('product_id',$product_id)->get();
+        return view('ProductPrice.FindProductPrice',compact('productprices'));
+    }
+
 
 }

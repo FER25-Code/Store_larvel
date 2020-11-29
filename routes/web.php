@@ -159,6 +159,7 @@ Route::group(['prefix' => 'transaction'],function (){
 Auth::routes();
 Route::group(['prefix' =>'user'],function (){
     Route::get('/alluser','UserController@All_User')->name('user.alluser');
+    Route::get('/finduserbalance','UserController@Find_UserBalance')->name('user.finduserbalance');
     Route::get('deleteuser/{user_id}','UserController@delete_User')->name('user.deleteuser');
 
 
@@ -185,4 +186,4 @@ Route::group(['prefix' => 'usergroup'],function (){
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/insertusers', [App\Http\Controllers\UserController::class, 'index'])->name('insertusers');
+Route::get('/insertusers', [App\Http\Controllers\UserController::class, 'Insert_User'])->name('insertusers');

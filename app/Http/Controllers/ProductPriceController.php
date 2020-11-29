@@ -59,24 +59,9 @@ class ProductPriceController extends Controller
 
     }
 
-
-/*    public function Find_ProductPrice($product_id){
-        //$productpricesFind=ProductPrice::find($product_id);
-        $productpricesFind=ProductPrice::whereColumn('product_id',$product_id);
-        if (!$productpricesFind)
-            return redirect()->back();
-      $productpricesFind=ProductPrice::select('id','pricelistversion_id','product_id','unitprice','qtytodiscount','discount','discountprice','updated','updatedby');
-       // DB::select('select * from productprices where product_id = :product_id', ['product_id' => $product_id]);
-
-        return view('ProductPrice.FindProductPrice',compact('productpricesFind'));
-
-    }*/
     public function Find_ProductPrice($product_id){
         $productprices=ProductPrice::where('product_id',$product_id)->get();
-      //   echo $productpricesFind;
-
         return view('ProductPrice.FindProductPrice',compact('productprices'));
-
     }
 
     public function Update_ProductPrice(Request $request ,$id){
